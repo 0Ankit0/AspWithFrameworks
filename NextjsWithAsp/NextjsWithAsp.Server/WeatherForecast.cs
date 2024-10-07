@@ -1,4 +1,4 @@
-namespace NextWithAsp.Server
+namespace NextjsWithAsp.Server
 {
     public class WeatherForecast
     {

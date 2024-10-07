@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace NextWithAsp.Server.Controllers
+namespace NextjsWithAsp.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
