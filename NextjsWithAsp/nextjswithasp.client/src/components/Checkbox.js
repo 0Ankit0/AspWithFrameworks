@@ -1,30 +1,23 @@
-"use client";
+import React from "react";
+import * as Checkbox from "@radix-ui/react-checkbox";
+import { CheckIcon } from "@radix-ui/react-icons";
 
-import React from 'react';
-
-const Checkbox = ({
-    checked,
-    onChange,
-    label,
-    className,
-    disabled,
-    ...props
-}) => {
-    const baseClassName = className || 'form-checkbox';
-
-    return (
-        <label className="flex items-center">
-            <input
-                type="checkbox"
-                checked={checked}
-                onChange={onChange}
-                className={baseClassName}
-                disabled={disabled}
+const CheckboxDemo = ({ className, label, indicatorClassName, ...props }) => (
+    <form>
+        <div className="flex items-center">
+            <Checkbox.Root
+                className={`flex size-[25px] appearance-none items-center justify-center rounded bg-white border border-gray-400 hover:bg-violet3 ${className}`}
                 {...props}
-            />
-            <span className="ml-2">{label}</span>
-        </label>
-    );
-};
+            >
+                <Checkbox.Indicator className={indicatorClassName || "text-blue-500"}>
+                    <CheckIcon />
+                </Checkbox.Indicator>
+            </Checkbox.Root>
+            <label className="pl-[15px] mt-3 text-[15px] leading-none" htmlFor="c1">
+                {label}
+            </label>
+        </div>
+    </form>
+);
 
-export default Checkbox;
+export default CheckboxDemo;
