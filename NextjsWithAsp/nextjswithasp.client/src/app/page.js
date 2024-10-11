@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section from "@/components/Section";
 import PopOver from "@/components/PopOver";
+import RadioGroupComponent from '@/components/Radio';
 
 const options = [
   { value: "apple", label: "Apple" },
@@ -34,6 +35,11 @@ export default function Home() {
     { value: 'option2', label: 'Option 2' },
     { value: 'option3', label: 'Option 3' },
   ];
+  const radioOptions = [
+    { id: 'r1', value: 'compact', label: 'Compact' },
+    { id: 'r2', value: 'standard', label: 'Standard' },
+    { id: 'r3', value: 'extended', label: 'Extended' },
+  ];
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -48,9 +54,10 @@ export default function Home() {
         <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} title="Interactive Elements">
           <Input placeholder="Enter text" className="mt-4" />
           <SelectComponent
-            options={options}
-            defaultValue={options[0].value}
+            options={selectOptions}
+            defaultValue={selectOptions[0].value}
           />
+          <RadioGroupComponent options={radioOptions} name="exampleRadioGroup" />
           <Checkbox label="Accept terms" className="mt-4" />
         </Modal>
 
